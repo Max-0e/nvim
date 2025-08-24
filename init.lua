@@ -15,6 +15,7 @@ vim.keymap.set("v", "<space>x", ":lua<CR>")
 -- save and exit
 vim.keymap.set("n", "<space>w", ":w<CR>")
 vim.keymap.set("n", "<space>q", ":q<CR>")
+vim.keymap.set("n", "<space>cb", ":bd<CR>")
 
 -- clear search etc.
 vim.keymap.set("n", "<space>cl", ":noh<CR>")
