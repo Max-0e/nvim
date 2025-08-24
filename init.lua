@@ -20,6 +20,10 @@ vim.keymap.set("n", "<space>cb", ":bd<CR>")
 -- clear search etc.
 vim.keymap.set("n", "<space>cl", ":noh<CR>")
 
+-- buffer navigation
+vim.keymap.set("n", "<space>bn", ":bnext<CR>")
+vim.keymap.set("n", "<space>bb", ":bprev<CR>")
+
 vim.o.tabstop = 4 -- A TAB character looks like 4 spaces
 vim.o.expandtab = true -- Pressing the TAB key will insert spaces instead of a TAB character
 vim.o.softtabstop = 4 -- Number of spaces inserted instead of a TAB character
@@ -106,3 +110,5 @@ require('gitsigns').setup{
     map('n', '<leader>tw', gitsigns.toggle_word_diff)
   end
 }
+
+require("bufferline").setup{}
