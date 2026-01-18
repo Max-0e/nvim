@@ -1,6 +1,7 @@
 -- set language
 vim.cmd("language en_US")
 
+-- set leader
 vim.g.mapleader = "<space>"
 vim.g.maplocalleader = "<space>"
 vim.g.have_nerd_font = true
@@ -57,13 +58,15 @@ vim.o.cursorline = true
 vim.o.scrolloff = 8
 vim.o.confirm = true
 
--- show inline diagnostic messages
--- vim.diagnostic.config({ virtual_text = true })
-
 vim.keymap.set({ "n", "x" }, "<D-.>", function()
 	require("tiny-code-action").code_action()
 end, { noremap = true, silent = true })
-vim.keymap.set("n", "KI", vim.diagnostic.open_float, { noremap = false, silent = true })
+vim.keymap.set("n", "K", function()
+	vim.lsp.buf.hover({ border = "rounded" })
+end, { noremap = false, silent = true })
+vim.keymap.set("n", "KI", function()
+	vim.diagnostic.open_float({ border = "rounded" })
+end, { noremap = false, silent = true })
 
 require("config.lazy")
 
@@ -144,8 +147,6 @@ require("gitsigns").setup({
 		map("n", "<leader>tw", gitsigns.toggle_word_diff)
 	end,
 })
-
-require("bufferline").setup({})
 
 -- configure floating terminal
 require("toggleterm").setup({
