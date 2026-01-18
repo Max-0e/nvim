@@ -19,7 +19,7 @@ vim.keymap.set("n", "<space>q", ":q<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<space>c", ":bd<CR>", { noremap = true, silent = true })
 
 -- clear search etc.
-vim.keymap.set("n", "<Esc>", ":noh<CR>")
+vim.keymap.set("n", "<Esc>", ":noh<CR>", { silent = true })
 
 -- split navigation
 vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left window" })
