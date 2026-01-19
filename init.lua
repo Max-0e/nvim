@@ -29,8 +29,16 @@ vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower win
 vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
 
 -- buffer navigation
-vim.keymap.set("n", "<space>bn", ":bnext<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<space>bb", ":bprev<CR>", { noremap = true, silent = true })
+-- Move to previous/next
+vim.keymap.set("n", "<A-h>", "<Cmd>BufferPrevious<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<A-l>", "<Cmd>BufferNext<CR>", { noremap = true, silent = true })
+
+-- Re-order to previous/next
+vim.keymap.set("n", "<A-H>", "<Cmd>BufferMovePrevious<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<A-L>", "<Cmd>BufferMoveNext<CR>", { noremap = true, silent = true })
+
+-- close tab
+vim.keymap.set("n", "<C-w>", "<Cmd>BufferClose<CR>", { noremap = true, silent = true })
 
 vim.o.tabstop = 2 -- A TAB character looks like 4 spaces
 vim.o.expandtab = true -- Pressing the TAB key will insert spaces instead of a TAB character
@@ -58,7 +66,7 @@ vim.o.cursorline = true
 vim.o.scrolloff = 8
 vim.o.confirm = true
 
-vim.keymap.set({ "n", "x" }, "<D-.>", function()
+vim.keymap.set({ "n", "x" }, "<A-.>", function()
 	require("tiny-code-action").code_action()
 end, { noremap = true, silent = true })
 vim.keymap.set("n", "K", function()
