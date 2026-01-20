@@ -35,6 +35,5 @@ require("lazy").setup({
 	checker = { enabled = true },
 })
 require("guess-indent").setup({})
-require("bufferline").setup({})
 require("autoclose").setup({})
 require("gitsigns").setup()

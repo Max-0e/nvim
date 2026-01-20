@@ -1,9 +1,3 @@
--- return {
--- 'akinsho/bufferline.nvim',
--- version = "*",
--- dependencies = 'nvim-tree/nvim-web-devicons'
--- }
---
 return {
 	"romgrk/barbar.nvim",
 	dependencies = {
@@ -14,20 +8,23 @@ return {
 		vim.g.barbar_auto_setup = false
 	end,
 	opts = {
-		auto_hide = 0,
-		animation = false,
+		auto_hide = 1,
+		animation = true,
+		maximum_padding = 1,
+		minimum_padding = 1,
 		icons = {
+			button = "", -- empty
 			filetype = {
 				enable = false,
 			},
 			buffer_index = true,
-			buffer_number = true,
 			diagnosticts = {
 				[vim.diagnostic.severity.ERROR] = { enabled = true, icon = "?" },
 				[vim.diagnostic.severity.WARN] = { enabled = false },
 				[vim.diagnostic.severity.INFO] = { enabled = false },
 				[vim.diagnostic.severity.HINT] = { enabled = true },
 			},
+			preset = "slanted",
 			gitsigns = {
 				added = { enabled = true, icon = "+" },
 				changed = { enabled = true, icon = "~" },
