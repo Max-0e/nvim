@@ -30,9 +30,19 @@ vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper win
 
 -- buffer navigation
 -- Move to previous/next
-vim.keymap.set("n", "<A-h>", "<Cmd>BufferPrevious<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<A-l>", "<Cmd>BufferNext<CR>", { noremap = true, silent = true })
-
+keymap("n", "<A-h>", "<Cmd>BufferPrevious<CR>", defaultOpts)
+keymap("n", "<A-l>", "<Cmd>BufferNext<CR>", defaultOpts)
+-- Goto buffer in position...
+keymap("n", "<A-1>", "<Cmd>BufferGoto 1<CR>", defaultOpts)
+keymap("n", "<A-2>", "<Cmd>BufferGoto 2<CR>", defaultOpts)
+keymap("n", "<A-3>", "<Cmd>BufferGoto 3<CR>", defaultOpts)
+keymap("n", "<A-4>", "<Cmd>BufferGoto 4<CR>", defaultOpts)
+keymap("n", "<A-5>", "<Cmd>BufferGoto 5<CR>", defaultOpts)
+keymap("n", "<A-6>", "<Cmd>BufferGoto 6<CR>", defaultOpts)
+keymap("n", "<A-7>", "<Cmd>BufferGoto 7<CR>", defaultOpts)
+keymap("n", "<A-8>", "<Cmd>BufferGoto 8<CR>", defaultOpts)
+keymap("n", "<A-9>", "<Cmd>BufferGoto 9<CR>", defaultOpts)
+keymap("n", "<A-0>", "<Cmd>BufferLast<CR>", defaultOpts)
 -- Re-order to previous/next
 vim.keymap.set("n", "<A-H>", "<Cmd>BufferMovePrevious<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<A-L>", "<Cmd>BufferMoveNext<CR>", { noremap = true, silent = true })
