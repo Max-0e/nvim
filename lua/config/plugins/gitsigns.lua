@@ -53,6 +53,9 @@ return {
 			map("n", "<leader>gb", function()
 				gitsigns.blame_line({ full = true })
 			end)
+			map("n", "<leader>gf", function()
+				gitsigns.blame()
+			end)
 
 			-- Toggles
 			map("n", "<leader>tb", gitsigns.toggle_current_line_blame)
