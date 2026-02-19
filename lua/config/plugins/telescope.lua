@@ -28,4 +28,14 @@ return {
 			desc = "Telescope help tags",
 		},
 	},
+	opts = {
+		pickers = {
+			find_files = {
+				hidden = true,
+			},
+			live_grep = {
+				hidden = true,
+			},
+		},
+	},
 }
