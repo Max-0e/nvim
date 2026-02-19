@@ -92,6 +92,14 @@ if vim.fn.has("mac") == 1 then
 	open_command = "open"
 end
 
+keymap("i", "<A-a>", "ä")
+keymap("i", "<A-S-a>", "Ä")
+keymap("i", "<A-o>", "ö")
+keymap("i", "<A-S-o>", "Ö")
+keymap("i", "<A-u>", "ü")
+keymap("i", "<A-S-u>", "Ü")
+keymap("i", "<A-s>", "ß")
+
 local function url_repo()
 	local cursorword = vim.fn.expand("<cfile>")
 	if string.find(cursorword, "^[a-zA-Z0-9-_.]*/[a-zA-Z0-9-_.]*$") then
