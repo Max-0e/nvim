@@ -22,7 +22,7 @@ return {
 
 				-- Rename the variable under your cursor.
 				--  Most Language Servers support renaming across files, etc.
-				map("lr", vim.lsp.buf.rename, "[R]e[n]ame")
+				map("Rr", vim.lsp.buf.rename, "[R]e[n]ame")
 
 				-- Find references for the word under your cursor.
 				map("gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
