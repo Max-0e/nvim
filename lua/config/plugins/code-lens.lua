@@ -2,7 +2,7 @@ local SymbolKind = vim.lsp.protocol.SymbolKind
 return {
 	"VidocqH/lsp-lens.nvim",
 	opts = {
-		enable = true,
+		enable = false,
 		include_declaration = false, -- Reference include declaration
 		sections = { -- Enable / Disable specific request, formatter example looks 'Format Requests'
 			definition = false,
