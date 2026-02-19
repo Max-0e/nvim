@@ -8,7 +8,7 @@ return {
 		vim.g.barbar_auto_setup = false
 	end,
 	opts = {
-		auto_hide = 1,
+		auto_hide = 0,
 		animation = true,
 		maximum_padding = 1,
 		minimum_padding = 1,
@@ -18,11 +18,11 @@ return {
 				enable = false,
 			},
 			buffer_index = true,
-			diagnosticts = {
-				[vim.diagnostic.severity.ERROR] = { enabled = true, icon = "?" },
-				[vim.diagnostic.severity.WARN] = { enabled = false },
-				[vim.diagnostic.severity.INFO] = { enabled = false },
-				[vim.diagnostic.severity.HINT] = { enabled = true },
+			diagnostics = {
+				[vim.diagnostic.severity.ERROR] = { enabled = true, icon = "" },
+				[vim.diagnostic.severity.WARN] = { enabled = true, icon = "" },
+				[vim.diagnostic.severity.INFO] = { enabled = true, icon = "" },
+				[vim.diagnostic.severity.HINT] = { enabled = true, icon = "" },
 			},
 			preset = "slanted",
 			gitsigns = {
