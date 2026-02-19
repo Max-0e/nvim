@@ -35,5 +35,12 @@ require("lazy").setup({
 	checker = { enabled = true },
 })
 require("guess-indent").setup({})
-require("autoclose").setup({})
 require("gitsigns").setup()
+local animate = require("mini.animate")
+animate.setup({
+	scroll = {
+		timing = animate.gen_timing.linear({ duration = 150, unit = "total" }),
+		subscroll = animate.gen_subscroll.equal({ max_output_steps = 120 }),
+	},
+	cursor = { enabled = false },
+})
