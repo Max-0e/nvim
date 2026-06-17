@@ -19,6 +19,11 @@ return {
 					},
 				},
 			},
+			auto_bootstrap_namespace = {
+				--block_scoped, file_scoped
+				type = "file_scoped",
+				enabled = true,
+			},
 		})
 	end,
 }
