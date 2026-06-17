@@ -28,6 +28,8 @@ opts.inccommand = "split"
 opts.cursorline = true
 opts.scrolloff = 8
 opts.confirm = true
+opts.splitright = true
+opts.splitbelow = true
 
 -- use schedule to not increase startup time when the clipboard contains a lot of data
 vim.schedule(function()
@@ -86,6 +88,10 @@ end, remapOpts)
 keymap("n", "KI", function()
 	vim.diagnostic.open_float({ border = "rounded" })
 end, remapOpts)
+
+keymap("n", "<space>CC", ":CopilotChat<CR>", defaultOpts)
+keymap("n", "<space>CR", ":CopilotChatReset<CR>", defaultOpts)
+keymap("n", "<C-t>", ":Tuxedo<CR>", defaultOpts)
 
 local open_command = "xdg-open"
 if vim.fn.has("mac") == 1 then

@@ -1,0 +1,3 @@
+return {
+	"IogaMaster/tuxedo.nvim",
+}
