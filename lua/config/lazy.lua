@@ -41,8 +41,8 @@ require("gitsigns").setup()
 local animate = require("mini.animate")
 animate.setup({
 	scroll = {
-		timing = animate.gen_timing.linear({ duration = 150, unit = "total" }),
-		subscroll = animate.gen_subscroll.equal({ max_output_steps = 120 }),
+		timing = animate.gen_timing.linear({ duration = 50, unit = "total" }),
+		subscroll = animate.gen_subscroll.equal({ max_output_steps = 50 }),
 	},
 	cursor = { enabled = false },
 })

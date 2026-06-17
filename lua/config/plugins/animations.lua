@@ -5,8 +5,8 @@ return {
 		opts = {
 			cursor = { enable = false },
 			scroll = { enable = true },
-			open = { enable = true },
-			close = { enable = true },
+			open = { enable = false },
+			close = { enable = false },
 		},
 	},
 	{
@@ -20,7 +20,7 @@ return {
 			damping = 0.95, -- 0.85     [0, 1]
 			damping_insert_mode = 0.95, -- 0.9      [0, 1]
 			distance_stop_animating = 0.5, -- 0.1      > 0
-			time_interval = 10, -- milliseconds
+			time_interval = 2, -- milliseconds
 
 			-- Smear cursor when moving within line or to neighbor lines.
 			-- Use `min_horizontal_distance_smear` and `min_vertical_distance_smear` for finer control

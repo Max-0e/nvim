@@ -9,7 +9,7 @@ return {
 	end,
 	opts = {
 		auto_hide = 0,
-		animation = true,
+		animation = false,
 		maximum_padding = 1,
 		minimum_padding = 1,
 		icons = {
