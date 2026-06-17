@@ -33,7 +33,7 @@ return { -- Autoformat
 			cs = { "dotnet sharpier" },
 			razor = { "prettier", "dotnet sharpier" },
 			python = { "black" },
-			xml = { "xmlformatter" },
+			xml = { lsp_format = "fallback" },
 		},
 	},
 }
