@@ -6,13 +6,14 @@ local colors = {
 	red = "#ed8796",
 	violet = "#c6a0f6",
 	grey = "#303030",
+	transparent = "none",
 }
 
-local my_theme = {
+local maxs_theme = {
 	normal = {
 		a = { fg = colors.black, bg = colors.violet },
 		b = { fg = colors.white, bg = colors.grey },
-		c = { fg = colors.white },
+		c = { fg = colors.white, bg = colors.transparent },
 	},
 
 	insert = { a = { fg = colors.black, bg = colors.blue } },
@@ -20,9 +21,9 @@ local my_theme = {
 	replace = { a = { fg = colors.black, bg = colors.red } },
 
 	inactive = {
-		a = { fg = colors.white, bg = colors.black },
-		b = { fg = colors.white, bg = colors.black },
-		c = { fg = colors.white },
+		a = { fg = colors.white, bg = colors.transparent },
+		b = { fg = colors.white, bg = colors.transparent },
+		c = { fg = colors.white, bg = colors.transparent },
 	},
 }
 
@@ -36,11 +37,15 @@ local sections = {
 	lualine_b = {
 		{ "filename", separator = leftSeperator },
 		{ "branch", separator = leftSeperator },
+		{ "lsp_status", separator = leftSeperator },
+		{ "show_macro_recording" },
 	},
 	lualine_c = {
-		"%=", --[[ add your center components here in place of this comment ]]
+		"%=",
 	},
-	lualine_x = {},
+	lualine_x = {
+		{ "copilot", seperator = rightSeperator, right_padding = 2 },
+	},
 	lualine_y = {
 		{ "filetype", seperator = rightSeperator, right_padding = 2 },
 		"progress",
@@ -53,12 +58,19 @@ local sections = {
 return {
 	{
 		"nvim-lualine/lualine.nvim",
+		dependencies = {
+			"AndreM222/copilot-lualine",
+			"pnx/lualine-lsp-status",
+		},
 		config = function()
 			require("lualine").setup({
-				theme = my_theme,
+				theme = maxs_theme,
 				component_separators = { left = "", right = "" },
 				section_separators = { left = "", right = "" },
 				sections = sections,
+				always_divide_middle = true,
+				tabline = {},
+				extensions = {},
 			})
 		end,
 	},
