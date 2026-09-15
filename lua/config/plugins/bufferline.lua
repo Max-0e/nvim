@@ -17,14 +17,14 @@ return {
 			filetype = {
 				enable = false,
 			},
-			buffer_index = true,
+			buffer_index = false,
 			diagnostics = {
 				[vim.diagnostic.severity.ERROR] = { enabled = true, icon = "" },
 				[vim.diagnostic.severity.WARN] = { enabled = true, icon = "" },
 				[vim.diagnostic.severity.INFO] = { enabled = true, icon = "" },
 				[vim.diagnostic.severity.HINT] = { enabled = true, icon = "" },
 			},
-			preset = "slanted",
+			preset = "default",
 			gitsigns = {
 				added = { enabled = true, icon = "+" },
 				changed = { enabled = true, icon = "~" },

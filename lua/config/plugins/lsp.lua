@@ -151,6 +151,7 @@ return {
 		local servers = {
 			-- clangd = {},
 			gopls = {},
+			tilt = {},
 			basedpyright = {},
 			roslyn = {},
 			ts_ls = {},

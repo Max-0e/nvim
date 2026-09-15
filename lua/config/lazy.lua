@@ -27,6 +27,39 @@ require("lazy").setup({
 		{
 			"catppuccin/nvim",
 			config = function()
+				require("catppuccin").setup({
+					transparent_background = true,
+					integrations = {
+						barbar = true,
+						treesitter = true,
+					},
+					custom_highlights = function(colors)
+						local defaultBg = "none"
+						return {
+							BufferTabpageFille = { bg = defaultBg },
+							BufferCurrent = { bg = defaultBg, fg = colors.text, bold = true },
+							BufferActive = { bg = defaultBg, fg = colors.green },
+							BufferInactive = { bg = defaultBg, fg = colors.overlay1 },
+							BufferAlternate = { bg = defaultBg, fg = colors.overlay1 },
+
+							BufferCurrentMod = { bg = defaultBg, fg = colors.yellow, bold = true },
+							BufferInactiveMod = { bg = defaultBg, fg = colors.yellow },
+
+							BufferCurrentERROR = { bg = defaultBg, fg = colors.red },
+							BufferCurrentWARN = { bg = defaultBg, fg = colors.yellow },
+							BufferInactiveERROR = { bg = defaultBg, fg = colors.red },
+							BufferInactiveWARN = { bg = defaultBg, fg = colors.yellow },
+							BufferInactiveDELETED = { bg = defaultBg, fg = colors.red },
+							BufferInactiveADDED = { bg = defaultBg, fg = colors.green },
+							BufferInactiveCHANGED = { bg = defaultBg, fg = colors.yellow },
+							BufferInactiveHINT = { bg = defaultBg, fg = colors.teal },
+
+							BufferCurrentSign = { bg = defaultBg, fg = colors.surface1 },
+							BufferActiveSign = { bg = defaultBg, fg = colors.surface1 },
+							BufferInactiveSign = { bg = defaultBg, fg = colors.surface1 },
+						}
+					end,
+				})
 				vim.cmd.colorscheme("catppuccin-mocha")
 				-- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
 				-- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
